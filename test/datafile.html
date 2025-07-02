@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Next File</title>
+</head>
+<body onload="displayImage()">
+	<h1>Next File</h1>
+
+	<script>
+		window.onload = function() {
+			// Retrieve the image data from the previous HTML file
+			var data = JSON.parse(sessionStorage.getItem("imageData"));
+
+			// Generate a unique ID
+			var id = new Date().getTime();
+
+			// Create a new image element and set the source to the captured image
+			var image = new Image();
+			image.src = data.imageData;
+			image.onload = function() {
+				// Create a new canvas element to add the ID to the image
+				var canvas = document.createElement("canvas");
+				var context = canvas.getContext("2d");
+
+				// Set the canvas size to match the captured image
+				canvas.width = image.width;
+				canvas.height = image.height;
+
+				// Draw the captured image onto the canvas
+				context.drawImage(image, 0, 0);
+
+				// Add the ID to the canvas
+				context.font = "20px Arial";
+				context.fillStyle = "#FFFFFF";
+				context.fillText("ID: " + id, 10, 30);
+
+				// Convert the canvas to a data URL and download the image with the ID as the filename
+				var dataURL = canvas.toDataURL("image/png");
+				var link = document.createElement("a");
+				link.download = id + ".png";
+				link.href = dataURL;
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			};
+		};
+
+        function displayImage(imageData) {
+			var imageElement = document.getElementById('image');
+            var link = document.createElement("a");
+            link.download = "filename.png";
+            link.href = imageData;
+
+			imageElement.src = imageData;
+			imageElement.style.display = "block";
+		}
+	</script>
+</body>
+</html>

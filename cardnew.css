@@ -1,0 +1,62 @@
+.card:nth-child(1) {
+  background: linear-gradient(90deg, #42c9a2, #1a609d);
+  left: 10px;
+}
+
+.card:nth-child(2) {
+  background: linear-gradient(240deg, #42c9a2, #1a609d);
+}
+
+.card:nth-child(3) {
+  background: linear-gradient(240deg, #1a609d, #42c9a2);
+}
+
+.card:nth-child(4) {
+  background: linear-gradient(90deg, #1a609d, #42c9a2);
+}
+
+.card {
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  display: inline-block;
+  width: calc(20% - 16px);
+  margin-right: 70px;
+  text-align: center;
+  color: white;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.number {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.card-container {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0px;
+}
+.number {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 15px 0;
+  margin-bottom: 10px; /* added margin */
+}
+
+.text {
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 15px; /* added margin */
+}

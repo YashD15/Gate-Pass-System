@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubantu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ubantu', sans-serif;
+
+}
+
+:root {
+    --blue: #287bff;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+
+}
+
+.nav {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(90deg, #43cea2, #185a9d);
+    border-left: 10px solid #43cea2;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.nav.active {
+    width: 80px;
+}
+
+
+.gateapp.active {
+   width: 0px;
+}
+.nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%
+}
+
+.nav ul li {
+    position: relative;
+    width: 200%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.nav ul li:hover,
+.nav ul li.hovered {
+
+    background: var(--white);
+
+}
+
+.nav ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.nav ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+
+}
+
+.nav ul li:hover a,
+.nav ul li.hovered a {
+
+    color: var(--blue);
+}
+
+.nav ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    top: 13px;
+    left: 0px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.nav ul li a .icon ion-icon {
+    font-size: 1.75em;
+}
+
+.nav ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    margin-left: 20px;
+    font-size: x-large;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.nav ul li:hover a::before,
+.nav ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white)
+}
+
+.nav ul li:hover a::after,
+.nav ul li.hovered a::after {
+
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active {
+
+    width: calc(100% - 80px);
+    left: 80px;
+
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+
+}
+
+.toggle {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 9px);
+    height: calc(100% - 10px);
+    background: linear-gradient(90deg, #43cea2, #185a9d);
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    min-width: 100px;
+
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: calc(100% + 200px);
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
+
+}
+
+.usericon {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* .user {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+.user div {
+    margin-left: 0;
+  }
+
+
+.username{
+    left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+} */
+
+
+
+.user {
+
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    font-size: 1vw;
+    margin-right: 0;
+}
+
+.username {
+    font-size: 1vw;
+
+}
+.user-name {
+ 
+    color: linear-gradient(90deg, #43cea2, #185a9d);
+
+}

@@ -1,0 +1,149 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 26, 2023 at 10:27 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `major`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`, `name`) VALUES
+(1, 'vp', 'vp', 'guard1'),
+(2, 'admin', 'admin', 'Yash');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitor`
+--
+
+CREATE TABLE `visitor` (
+  `id` int(11) NOT NULL,
+  `qrid` varchar(100) NOT NULL,
+  `fname` text NOT NULL,
+  `lname` text NOT NULL,
+  `contact` varchar(10) NOT NULL,
+  `email` text NOT NULL,
+  `age` int(11) NOT NULL,
+  `gender` text NOT NULL,
+  `visitperson` text NOT NULL,
+  `visitdep` text NOT NULL,
+  `noplate` text NOT NULL,
+  `entry` text NOT NULL DEFAULT current_timestamp(),
+  `exittime` datetime DEFAULT NULL,
+  `photo` text NOT NULL,
+  `guard` text NOT NULL,
+  `chartday` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `visitor`
+--
+
+INSERT INTO `visitor` (`id`, `qrid`, `fname`, `lname`, `contact`, `email`, `age`, `gender`, `visitperson`, `visitdep`, `noplate`, `entry`, `exittime`, `photo`, `guard`, `chartday`) VALUES
+(1, 'MAR23AB033', 'ram', 'ukdtk', '2611522', 'ash@mail', 11, 'female', 'Manisha Pokharkar', 'IF', 'efw4fw', '2023-03-23 20:35:27', '2023-03-26 13:47:29', './image/', '', NULL),
+(2, 'MAR23AB034', 'ram', 'ukdtk', '2611522', 'ash@mail', 0, '', '1', 'EJ', '', '2023-03-23 20:40:17', '2023-03-26 13:49:34', './image/', '', NULL),
+(3, 'MAR24AB035', '', '', '', '', 0, '', '1', '1', '', '2023-03-24 19:36:23', NULL, './image/', '', NULL),
+(4, 'MAR24AB036', 'ram', 'ukdtk', '2611522', 'ash@mail', 33, 'male', '3', '3', '', '2023-03-24 19:36:47', NULL, './image/', '', NULL),
+(5, 'MAR24AB037', 'ram', 'ukdtk', '2611522', 'ash@mail', 55, 'male', '3', '2', '', '2023-03-24 19:38:55', NULL, './image/', '', NULL),
+(6, 'MAR24AB038', 'ram', 'ukdtk', '2611522', 'ash@mail', 55, 'male', '', '2', '', '2023-03-24 19:41:05', NULL, './image/', '', NULL),
+(7, 'MAR24AB039', 'ram', 'ukdtk', '2611522', 'ash@mail', 55, 'male', '---Choose Faculty---', '2', '', '2023-03-24 19:41:32', '2023-03-22 11:22:58', './image/', '', NULL),
+(8, 'MAR24AB040', 'kisan', 'ukdtk', '2611522', 'ash@mail', 55, 'male', '---Choose Faculty---', '2', '', '2023-03-24 19:45:37', NULL, './image/', '', NULL),
+(9, 'MAR24AB041', 'kisan', 'etgbfet', '2611522', 'ash@mail', 55, 'male', '---Choose Faculty---', '2', '', '2023-03-24 19:46:00', NULL, './image/', '', NULL),
+(10, 'MAR24AB042', 'hdsg', 'etgbfet', '2611522', 'ash@mail', 41, 'male', '---Choose Faculty---', '2', '', '2023-03-24 20:07:20', NULL, './image/uploads02-16-2023-0621.jpg', '', NULL),
+(11, 'MAR24AB043', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:20:39', NULL, './image/mob-slider7.jpg', '', NULL),
+(12, 'MAR24AB044', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:21:27', NULL, './image/mob-slider7.jpg', '', NULL),
+(13, 'MAR24AB045', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:26:26', NULL, './image/mob-slider7.jpg', '', NULL),
+(14, 'MAR24AB046', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:26:43', NULL, './image/mob-slider7.jpg', '', NULL),
+(15, 'MAR24AB047', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:35:43', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(16, 'MAR24AB048', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:36:09', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(17, 'MAR24AB049', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:39:47', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(18, 'MAR24AB050', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:47:07', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(19, 'MAR24AB051', '', '', '', '', 0, '', '---Choose Faculty---', '1', '', '2023-03-24 20:47:14', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(20, 'MAR24AB052', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 12, 'male', '1', '1', '', '2023-03-24 23:32:30', '0000-00-00 00:00:00', './image/mob-slider7.jpg', '', NULL),
+(21, 'MAR24AB053', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 12, 'male', '1', '1', '', '2023-03-24 23:37:05', NULL, './image/mob-slider7.jpg', '', NULL),
+(22, 'MAR24AB054', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 12, 'male', '1', '1', '', '2023-03-24 23:39:13', NULL, './image/uploads02-16-2023-0621.jpg', '', NULL),
+(23, 'MAR24AB055', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 12, 'male', '1', '1', '', '2023-03-24 23:41:27', NULL, './image/mob-slider7.jpg', '', NULL),
+(24, 'MAR24AB056', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 22, 'male', '3', '2', '', '2023-03-24 23:44:29', NULL, './image/mob-slider7.jpg', '', NULL),
+(25, 'MAR24AB057', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 22, 'male', '1', '2', '', '2023-03-24 23:48:51', NULL, './image/uploads02-16-2023-0621.jpg', '', 'Saturday 2023-03-25'),
+(26, 'MAR24AB058', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 11, 'male', '1', '1', '', '2023-03-24 23:52:47', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(27, 'MAR24AB059', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 11, 'male', '1', '1', '', '2023-03-24 23:55:12', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', NULL),
+(28, 'MAR26AB062', 'gogi', 'etgbfet', '2611522', 'ash@mail', 11, 'female', '3', '2', '', '2023-03-26 11:09:43', NULL, './image/uploads02-16-2023-0621.jpg', '', NULL),
+(29, 'MAR26AB063', 'kisan', 'edvsdadadscvadv', '2611522', 'ash@mail', 14, 'female', '2', '2', '', '2023-03-26 12:15:07', NULL, './image/Best-Indian-Punjabi-Samosa-Recipe.jpg', '', '0000-00-00'),
+(30, 'MAR26AB064', 'goku', 'edvsdadadscvadv', '2611522', 'ash@mail', 51, 'female', '1', '2', '', '2023-03-26 12:16:42', NULL, './image/uploads02-16-2023-0621.jpg', '', 'Sunday 2023-03-26'),
+(31, 'MAR26AB065', 'gogi', 'etgbfet', '2611522', 'ash@mail', 25, 'male', '2', '3', '', '2023-03-26 12:30:11', NULL, './image/mob-slider7.jpg', '', 'Sunday 2023-03-26'),
+(32, 'MAR26AB066', 'goku', 'edvsdadadscvadv', '2611522', 'ash@mail', 55, 'female', '3', '2', '', '2023-03-26 12:57:13', '2023-03-26 13:46:51', './image/mob-slider7.jpg', '', 'Sunday 2023-03-26'),
+(33, 'MAR26AB025', '', '', '', '', 0, '', 'Shridevi Patil', 'IF', '', '2023-03-26 13:07:22', NULL, './image/', '', NULL),
+(34, 'MAR26AB026', '', '', '', '', 0, '', 'Vijay Patil', 'CO', '', '2023-03-26 13:07:50', NULL, './image/', '', NULL),
+(35, 'MAR26AB027', '', '', '', '', 0, '', '1', 'CO', '', '2023-03-26 13:08:08', NULL, './image/', '', NULL),
+(36, 'MAR26AB025', '', '', '', '', 0, '', 'Shridevi Patil', 'IF', '', '2023-03-26 13:09:14', NULL, './image/', '', NULL),
+(37, 'MAR26AB066', 'goku', 'edvsdadadscvadv', '2611522', 'ash@mail', 0, 'male', '3', '2', '', '2023-03-26 13:21:31', '2023-03-26 13:46:51', './image/mob-slider7.jpg', '', 'Sunday 2023-03-26'),
+(38, 'MAR26AB067', 'goku', 'edvsdadadscvadv', '2611522', 'ash@mail', 14, 'female', '4', '2', '', '2023-03-26 13:44:59', NULL, './image/mob-slider7.jpg', 'guard1', 'Sunday 2023-03-26');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `visitor`
+--
+ALTER TABLE `visitor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `visitor`
+--
+ALTER TABLE `visitor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

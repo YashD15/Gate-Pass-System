@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Demo</title>
+	<style>
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+            vertical-align: middle;
+
+		}
+
+		.btn:hover {
+			background-color: #0069d9;
+		}
+
+		.file-btn {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+            vertical-align: middle;
+
+		}
+
+		.file-btn input[type="file"] {
+			position: absolute;
+			font-size: 100px;
+			right: 0;
+			top: 0;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		.file-btn:hover {
+			background-color: #0069d9;
+		}
+
+		.file-btn:hover::before {
+			transform: scaleX(1);
+		}
+
+		.file-btn::before {
+			content: "Upload File";
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			transform: scaleX(0);
+			transform-origin: left;
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn">Normal Button</button>
+	<label class="file-btn">
+		<span>Select File</span>
+		<input type="file">
+	</label>
+</body>
+</html>

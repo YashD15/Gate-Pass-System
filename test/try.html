@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Capture and Display</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		#image {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button onclick="openCameraPopup()">Click an Image</button>
+	</div>
+	<img id="image" src="" alt="Captured Image">
+
+	
+</body>
+
+<script>
+  function openCameraPopup() {
+    window.open("camera.html", "CameraPopup", "width=320,height=320");
+  }
+
+  function displayImage(imageData) {
+    var imageElement = document.getElementById('image');
+    imageElement.src = imageData;
+    imageElement.style.display = "block";
+    var link = document.createElement("a");
+    link.download = "123.png";
+    link.href = imageData;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+
+
+  }
+</script>
+</html>
